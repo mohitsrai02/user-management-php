@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Instagram Post</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Stylesheets-->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    </head>
+    <body>
+
+        <div class="jumbotron jumbotron-fluid" style="height: 150px; padding: 40px;">
+            <div class="container">
+              <h1 class="display-4">Instagram Post</h1>
+            </div>
+        </div>
+            <form method="post" action="action.php" enctype="multipart/form-data" name="form1">
+                <div class="container border">
+                    <div class="row">
+                        <div class="col-md-4 border">
+                            <div class="file-field">
+                                <div class="z-depth-1-half mb-4">
+                                  <!--Displaying Image-->
+                                  <img id="img_url" src="images/demo.png" class="img-fluid" alt="Insta Image" style="padding: 10px;">
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                  <div class="btn btn-mdb-color btn-rounded float-left">
+                                    <span></span>
+                                    <!--Image Upload-->
+                                    <input type="file" id="img_file" name="photo" onChange="img_pathUrl(this);" accept="image/gif, image/jpeg, image/png" required>
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-md-8">
+                              <div class="form-group">
+                                <!--Caption Input-->
+                                <label for="caption">Caption:</label>
+                                <textarea type="text" class="form-control" id="caption" placeholder="Caption Here" name="caption" required></textarea>
+                              </div>
+                              <hr>
+                              <!--Tag People-->
+                              <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-outline-secondary"><input type="checkbox" name="tags[]" id="tag1" value="ajay" autocomplete="off"> Ajay</label>
+                                <label class="btn btn-outline-secondary"><input type="checkbox" name="tags[]" id="tag2" value="ranveer" autocomplete="off"> Ranveer</label>
+                                <label class="btn btn-outline-secondary"><input type="checkbox" name="tags[]" id="tag3" value="akshay" autocomplete="off"> Akshay</label>
+                                <label class="btn btn-outline-secondary"><input type="checkbox" name="tags[]" id="tag4" value="dipika" autocomplete="off"> Dipika</label>
+                                <label class="btn btn-outline-secondary"><input type="checkbox" name="tags[]" id="tag5" value="rani" autocomplete="off"> Rani</label>
+                              </div>
+                              <br>
+                              <label for="tags" style="margin-bottom: 0px; margin-top: 2px;">Tag People</label>
+                              <hr>
+                              <!--Location-->
+                              <div class="form-group">
+                                <label for="location">Location:</label>
+                                <input type="text" class="form-control" id="location" placeholder="Enter Locaion" name="location" required>
+                              </div>
+                              <hr>
+                              <!--Hash Tags-->
+                              <div class="form-group">
+                                <label for="hashtags">#Tags</label>
+                                <input type="text" class="form-control" id="htags" placeholder="# Tags" name="htags" onblur="tagvalidation(document.form1.htags)">
+                                  <p style="color: red; font-size: 0.8em; margin-left: 5%; display: none;" id="er1">
+                                    Invalid #tag format
+                                  </p>
+                              </div>
+                            <hr>
+                            <!--Other Social Medias-->
+                            <label for="smedia">Post on:</label>
+                            <div style="margin-left:350px;">
+                                <div class="form-check"><label class="form-check-label" for="Facebook"><input type="checkbox" class="form-check-input" id="check1" name="smedia[]" value="facebook">Facebook</label></div>
+                                <div class="form-check"><label class="form-check-label" for="Twitter"><input type="checkbox" class="form-check-input" id="check2" name="smedia[]" value="twitter">Twitter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label></div>
+                                <div class="form-check"><label class="form-check-label" for="Tumblr"><input type="checkbox" class="form-check-input" id="check2" name="smedia[]" value="tumblr">Tumblr&nbsp;&nbsp;&nbsp;&nbsp;</label></div>
+                            </div>
+                            <hr>
+                            <!--Date and Time-->
+                            <div class="form-inline">
+                                <div style="padding-right:50%;"><label for="smedia">Select Date</label><input type="date" class="form-control" id="date" placeholder="Select Date" name="pdate" required></div>
+                                <div><label for="smedia">Select Time</label><input type="time" class="form-control" id="time" placeholder="Select Time" name="ptime" required></div>
+                            </div>
+                            <hr>
+                            <!--Submit/Reset-->
+                            <div class="text-right">
+                                <input type="submit" class="btn btn-outline-success" style="margin: 2px;" placeholder="Submit" id="p_submit"><button type="reset" class="btn btn-outline-danger" style="margin: 5px;">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="container">
+              Click <a href="admin.html">here</a> for admin login
+            </div>
+            <!--Scripts-->
+            <script src="javascript/script.js"></script>
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+               </body>
+</html>
+
